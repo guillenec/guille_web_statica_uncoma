@@ -52,10 +52,19 @@
           <label for="direccion">direccion</label>
           <input type="text" name="direccion" id="direccion">
         </section>
+
         <section class="section_formContact">
-          <label for="provincia">provincia</label>
-          <input type="text" name="provincia" id="provincia">
+          <label for="provincia">Provincia:</label>
+          <input list="provincias" id="provincia" name="provincia">
+          <datalist id="provincias">
+            <option value="Río Negro">
+            <option value="Neuquén">
+            <option value="Chubut">
+            <option value="Santa Cruz">
+            <option value="Tierra del Fuego">
+          </datalist>
         </section>
+
         <section class="section_formContact">
           <label for="cp">codigo postal</label>
           <input type="text" name="cp" id="cp">
@@ -76,6 +85,32 @@
             <input type="radio" name="selectradio" id="tel2" value="telefono">
           </div>
         </fieldset>
+
+        <fieldset class="section_formContact_select">
+          <legend>Tipo de suscripción:</legend>
+          <div class="div_checkboxContent">
+            <input type="checkbox" id="noticias" name="suscripcion" value="noticias">
+            <label for="noticias">Noticias</label>
+          </div>
+          <div class="div_checkboxContent">
+            <input type="checkbox" id="promociones" name="suscripcion" value="promociones">
+            <label for="promociones">Promociones</label>
+          </div>
+          <div class="div_checkboxContent">
+            <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked>
+            <label for="alertas">Alertas</label>
+          </div>
+          <div class="div_checkboxContent">
+            <input type="checkbox" id="eventos" name="suscripcion" value="eventos">
+            <label for="eventos">Eventos</label>
+          </div>
+        </fieldset>
+
+
+        <div class="content_buttonForm">
+          <button type="submit">Cargar</button>
+        </div>
+
     </section>
     </section>
     </form>
