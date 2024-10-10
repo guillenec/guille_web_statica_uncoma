@@ -28,34 +28,48 @@
     <section class="sectionForm">
 
       <form action="" class="formContact">
+        <!-- Section nombre -->
         <section class="section_formContact">
           <label for="nombre">nombre</label>
-          <input type="text" name="nombre" id="nombre">
+          <input type="text" name="nombre" id="nombre" maxlength="20" placeholder="ingrese su nombre" required>
         </section>
+
+        <!-- secction apellido -->
         <section class="section_formContact">
           <label for="apellido">apellido</label>
-          <input type="text" name="apellido" id="apellido">
+          <input type="text" name="apellido" id="apellido" maxlength="20" placeholder="ingrese su apellido">
         </section>
+
+        <!-- section email -->
         <section class="section_formContact">
           <label for="email">email</label>
-          <input type="email" name="email" id="email">
+          <input type="email" name="email" id="email" placeholder="ingrese su email" required>
         </section>
+
+        <!-- section telefono -->
         <section class="section_formContact">
           <label for="telefono">telefono</label>
-          <input type="tel" name="telefono" id="telefono">
+          <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su número de teléfono" required>
+          <span id="telefono-help"
+            style="font-size: 11px; color: white; text-transform: capitalize; font-weight: 600;">formato: (código)
+            número</span>
         </section>
+
+        <!-- section edad -->
         <section class="section_formContact">
           <label for="edad">edad</label>
-          <input type="number" name="edad" id="edad">
+          <input type="number" name="edad" id="edad" placeholder="ingrese su edad" min="16" max="120">
         </section>
+
+        <!-- section direccion -->
         <section class="section_formContact">
           <label for="direccion">direccion</label>
-          <input type="text" name="direccion" id="direccion">
+          <input type="text" name="direccion" id="direccion" placeholder="ingrese su direccion">
         </section>
 
         <section class="section_formContact">
           <label for="provincia">Provincia:</label>
-          <input list="provincias" id="provincia" name="provincia">
+          <input list="provincias" id="provincia" name="provincia" placeholder="ingrese una provincia">
           <datalist id="provincias">
             <option value="Río Negro">
             <option value="Neuquén">
@@ -67,7 +81,7 @@
 
         <section class="section_formContact">
           <label for="cp">codigo postal</label>
-          <input type="text" name="cp" id="cp">
+          <input type="text" name="cp" id="cp" placeholder="cvv formato A1234ABC" pattern="[A-Za-z]\d{4}[A-Za-z]{3}">
         </section>
 
         <fieldset class="section_formContact_select">
@@ -111,6 +125,59 @@
           <button type="submit">Cargar</button>
         </div>
 
+        <!-- Tabla vacía -->
+        <table class="tablaCustom">
+          <thead class="cabecera_tabla">
+            <tr>
+              <th>Campo</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody class="cuerpo_tabla">
+            <tr>
+              <td>Nombre</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Apellido</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Teléfono</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Edad</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Dirección</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Provincia</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Código Postal</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Método preferido de contacto</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Suscripción</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+
     </section>
     </section>
     </form>
@@ -120,6 +187,11 @@
     <h2>Nodo Curza Ingeniero Jacobacci</h2>
     <p>&copy; sin copy</p>
   </footer>
+  <script>
+    document.getElementById('telefono').addEventListener('focus', function () {
+      document.getElementById('telefono-help').style.display = 'none';
+    });
+  </script>
 </body>
 
 </html>
