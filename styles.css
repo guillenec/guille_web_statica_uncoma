@@ -5,7 +5,9 @@
   --titulo: "Sour Gummy", serif;
   --color_custom1: rgb(59, 59, 100);
   --color_custom2: #fff;
-  --color_custom3: rgb(59, 59, 100);
+  --color_custom3: rgb(229, 229, 243);
+  --color_custom4: rgb(162, 162, 235);
+
 }
 
 * {
@@ -15,12 +17,14 @@
   font-family: var(--titulo);
   font-weight: 300;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 .principal {
   width: 100%;
   height: 100vh;
   min-width: 400px;
+  position: relative;
 }
 
 .header .navMenu {
@@ -78,14 +82,35 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .main .content_b .content_c {
+  background-color: var(--color_custom3);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   text-align: left;
   font-size: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  position: relative;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.main .content_b .content_c::-webkit-scrollbar {
+  display: none;
+}
+
+.main .content_b .content_c .sticky {
+  position: sticky;
+  top: 00;
+  z-index: 10;
+  font-weight: 500;
+  background-color: var(--color_custom4);
+  border-radius: 2px 2px 0 0;
 }
 
 .main .content_b img {
@@ -173,4 +198,35 @@
 .footer h2,
 .footer p {
   font-family: var(--parrafo);
+}
+
+.backTop {
+  position: fixed;
+  right: 8px;
+  bottom: 13px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-family: var(--titulo);
+  font-weight: 900;
+  background-color: var(--color_custom2);
+  color: var(--color_custom1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  text-decoration: none;
+  transform: scale(1);
+  transition: transform .3s ease-in;
+}
+
+.backTop:hover {
+  background-color: var(--color_custom2);
+  color: var(--color_custom1);
+  transform: scale(1.1);
+  transition: transform .3s ease-in;
 }
